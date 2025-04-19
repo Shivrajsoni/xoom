@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter  = Inter({subsets:['latin']});
 
@@ -21,7 +22,22 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-[#161925]`} // bg-dark-2
         >
-        {children}
+          <ClerkProvider appearance={{
+            layout:{
+              logoImageUrl:'/icons/xoom-logo.svg',
+              socialButtonsVariant:'iconButton'
+            },
+            variables:{
+              colorText:'#fff',
+              colorPrimary:'#0E78F9',
+              colorBackground:'#1c1f2e',
+              colorInputBackground:'#252a41',
+              colorInputText:'#fff',
+
+            }
+          }}>
+            {children}
+          </ClerkProvider>
       </body>
     </html>
   );
