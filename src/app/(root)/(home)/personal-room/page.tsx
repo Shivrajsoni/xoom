@@ -2,7 +2,7 @@
 import { useUser } from '@clerk/nextjs';
 import { useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { useRouter } from 'next/navigation';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { UseGetCallById } from '../../../../../hooks/useGetCallById';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';

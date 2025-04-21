@@ -4,7 +4,6 @@ import {
   DeviceSettings,
   VideoPreview,
   useCall,
-  useCallStateHooks,
 } from '@stream-io/video-react-sdk';
 import React from 'react'
 import { Button } from './ui/button';
@@ -22,12 +21,12 @@ const MeetingSetup = ({setisSetupComplete}:{setisSetupComplete:(value:boolean)=>
     
     useEffect(()=>{
         if(isMicCamToggled){
-            call.camera.disable(),
-            call.microphone.disable()
+            call?.camera.disable();
+            call.microphone.disable();
         }
         else{
             call.camera.enable();
-            call.microphone.enable()
+            call.microphone.enable();
         }
     },[isMicCamToggled,call?.camera,call?.microphone])
     
